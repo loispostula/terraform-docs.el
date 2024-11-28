@@ -1,6 +1,6 @@
 ;;; terraform-docs.el --- Integrate terraform-docs with Emacs -*- lexical-binding: t; -*-
 
-;; Author: Loïs Postula <lois@postu.la>
+;; Author: Lo1s Postula <lois@postu.la>
 ;; URL: https://github.com/loispostula/terraform-docs.el
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "27.1"))

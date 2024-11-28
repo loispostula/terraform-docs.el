@@ -1,7 +1,7 @@
 scm:
   commitusingapi: true
   enabled: true
-  user: mbrella
+  user: loisbot
   email: bot@postu.la
   owner: loispostula
   repository: terraform-docs.el
