@@ -1,6 +1,6 @@
 ;;; terraform-docs.el --- Integrate terraform-docs -*- lexical-binding: t; -*-
 
-;; Author: Lo1s Postula <lois@postu.la>
+;; Author: Lois Postula <lois@postu.la>
 ;; URL: https://github.com/loispostula/terraform-docs.el
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "27.1"))
@@ -16,7 +16,7 @@
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
 
-;; You should have received a copy of the GNU General Public License
+;; You should have received a copyof the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
@@ -47,12 +47,13 @@ It will starts from START-DIR and searching upwards."
     (when config-dir
       (expand-file-name terraform-docs-config-name config-dir))))
 
-(defun terraform-docs-run (&optional file-path stdout)
+(defun terraform-docs (&optional file-path stdout)
   "Run terraform-docs.
 If FILE-PATH is provided, use it as the base path.
    Otherwise, default to the current buffer.
 If STDOUT is non-nil, return the output as a string
    instead of using the user-defined configuration."
+  (interactive)
   (let* ((file-path (or file-path (buffer-file-name)))
          (current-dir (file-name-directory file-path))
          (config-file (terraform-docs-config-file current-dir))
@@ -78,7 +79,7 @@ If STDOUT is non-nil, return the output as a string
 If FILE-PATH is provided, use it as the base path.
     Otherwise, default to the current buffer."
   (interactive)
-  (let ((output (terraform-docs-run file-path t)))
+  (let ((output (terraform-docs file-path t)))
     (with-output-to-temp-buffer "*terraform-docs-output*"
       (princ output))))
 
@@ -95,7 +96,7 @@ If FILE-NAME is provided, use it as the output path.
          (current-dir (file-name-directory file-path))
          (directory-name (file-name-nondirectory (directory-file-name current-dir)))
          (output-file (or file-name (expand-file-name (format "output-for-%s.md" directory-name) current-dir)))
-         (output (terraform-docs-run file-path t)))
+         (output (terraform-docs file-path t)))
     (with-temp-file output-file
       (insert output))
     (message "Output written to %s" output-file)
