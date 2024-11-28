@@ -1,0 +1,45 @@
+#+title: terraform-docs.el: Generate your Terraform documentation from Emacs
+#+author: Loïs Postula
+
+[[https://github.com/loispostula/terraform-docs.el/actions][https://github.com/loispostula/terraform-docs.el/actions/workflows/test.yml/badge.svg]] [[https://melpa.org/#/terraform-docs.el][file:https://melpa.org/packages/terraform-docs.el.svg]] [[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPL%20v3-blue.svg]]
+
+
+* ~terraform-docs.el~
+An Emacs package for seamlessly integrating [[https://terraform-docs.io/][terraform-docs]] into your workflow. This package provides utilities for generating [[https://terraform.io][Terraform]] documentation from your modules, with options to view the output in a buffer, write it to a file, or both.
+
+
+* Features
+- *Customizable Configuration File:*
+  Specify the configuration file name for =terraform-docs= (default: =.terraform-docs.yml=).
+- *Flexible Output Options:*
+  - Display the generated documentation in a popup buffer.
+  - Save the documentation to a dynamically named file.
+  - Save the documentation to a file and open it immediately in Emacs.
+- *Automatic File Naming:*
+  Output files are named dynamically based on the module directory name, using the format =output-for-<module-directory>.md=.
+
+* Usage
+** Commands
+1. *Run with Default Behavior:*
+   Runs =terraform-docs= using the configuration file and user-defined output settings:
+   #+begin_src emacs-lisp
+   M-x terraform-docs
+   #+end_src
+
+2. *Output to a Temporary Buffer:*
+   Runs =terraform-docs= and displays the output in a temporary buffer:
+   #+begin_src emacs-lisp
+   M-x terraform-docs-to-buffer
+   #+end_src
+
+3. *Output to a File:*
+   Generates documentation and writes it to a file in the module directory:
+   #+begin_src emacs-lisp
+   M-x terraform-docs-to-file
+   #+end_src
+
+4. *Output to a File and Open:*
+   Generates documentation, writes it to a file, and opens the file in Emacs:
+   #+begin_src emacs-lisp
+   M-x terraform-docs-to-file-and-open
+   #+end_src
