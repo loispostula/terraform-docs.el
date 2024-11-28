@@ -63,9 +63,9 @@ Example of 'test' module.
                     (expand-file-name ".custom-docs-config.yml" terraform-docs-fixtures-dir)))
         (delete-file (expand-file-name ".custom-docs-config.yml" terraform-docs-fixtures-dir))))))
 
-(describe "terraform-docs-run"
+(describe "terraform-docs"
   (it "generates the expected output as a string"
-    (let* ((output (terraform-docs-run (expand-file-name "main.tf" terraform-docs-fixtures-dir) t))
+    (let* ((output (terraform-docs (expand-file-name "main.tf" terraform-docs-fixtures-dir) t))
            (clean-output (terraform-docs-normalize-output (substring-no-properties output))))
       (expect clean-output :to-equal terraform-docs-expected-output))))
 
