@@ -1,0 +1,28 @@
+name: ⬆️ github actions
+pipelineid: github_actions
+
+actions:
+  default:
+    kind: github/pullrequest
+    spec:
+      automerge: false
+      labels:
+        - chore
+    scmid: default
+scms:
+  default:
+    kind: github
+    spec:
+      branch: '{{ .scm.branch }}'
+      email: '{{ .scm.email }}'
+      owner: '{{ .scm.owner }}'
+      repository: '{{ .scm.repository }}'
+      token: '{{ requiredEnv "GITHUB_TOKEN" }}'
+      user: '{{ .scm.user }}'
+      username: '{{ requiredEnv "GITHUB_ACTOR" }}'
+
+autodiscovery:
+  scmid: default
+  actionid:  default
+  crawlers:
+    github/action:

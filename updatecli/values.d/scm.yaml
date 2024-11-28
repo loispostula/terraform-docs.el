@@ -1,0 +1,9 @@
+scm:
+  commitusingapi: true
+  enabled: true
+  user: mbrella
+  email: bot@postu.la
+  owner: loispostula
+  repository: terraform-docs.el
+  username: "updatecli-bot"
+  branch: main
