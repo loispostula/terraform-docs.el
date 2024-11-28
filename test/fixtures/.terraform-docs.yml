@@ -1,0 +1,4 @@
+formatter: "markdown table"
+
+settings:
+  hide-empty: true

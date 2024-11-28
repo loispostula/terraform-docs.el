@@ -1,0 +1,22 @@
+name: Tests
+on:
+  - pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install terraform-docs
+        uses: jaxxstorm/action-install-gh-release@v1.14.0
+        with:
+          repo: terraform-docs/terraform-docs
+          tag: v0.19.0
+      - uses: purcell/setup-emacs@master
+        with:
+          version: 27.1
+      - uses: actions/setup-python@v2
+      - uses: conao3/setup-cask@master
+      - name: Run tests
+        run: |
+          cask install
+          cask exec buttercup -L . test/

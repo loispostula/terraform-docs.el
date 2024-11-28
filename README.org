@@ -1,8 +1,9 @@
 #+title: terraform-docs.el: Generate your Terraform documentation from Emacs
 #+author: Loïs Postula
 
-[[https://github.com/loispostula/terraform-docs.el/actions][https://github.com/loispostula/terraform-docs.el/actions/workflows/test.yml/badge.svg]] [[https://melpa.org/#/terraform-docs.el][file:https://melpa.org/packages/terraform-docs.el.svg]] [[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPL%20v3-blue.svg]]
-
+[[https://github.com/loispostula/terraform-docs.el/actions][https://github.com/loispostula/terraform-docs.el/actions/workflows/test.yml/badge.svg]]
+[[https://melpa.org/#/terraform-docs.el][file:https://melpa.org/packages/terraform-docs.el.svg]]
+[[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPL%20v3-blue.svg]]
 
 * ~terraform-docs.el~
 An Emacs package for seamlessly integrating [[https://terraform-docs.io/][terraform-docs]] into your workflow. This package provides utilities for generating [[https://terraform.io][Terraform]] documentation from your modules, with options to view the output in a buffer, write it to a file, or both.

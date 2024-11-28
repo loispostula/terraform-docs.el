@@ -3,7 +3,7 @@
 ;; Author: Loïs Postula <lois@postu.la>
 ;; URL: https://github.com/loispostula/terraform-docs.el
 ;; Version: 0.1
-;; Package-Requires: ((emacs "25.1"))
+;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: terraform, tools, docs
 
 ;; This program is free software; you can redistribute it and/or modify
