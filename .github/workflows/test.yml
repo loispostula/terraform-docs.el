@@ -15,7 +15,7 @@ jobs:
       - uses: purcell/setup-emacs@master
         with:
           version: 27.1
-      - uses: actions/setup-python@v2
+      - uses: "actions/setup-python@v5.3.0"
       - uses: conao3/setup-cask@master
       - name: Run tests
         run: |
