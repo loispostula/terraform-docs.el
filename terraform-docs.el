@@ -47,7 +47,7 @@ starting from START-DIR and searching upwards."
     (when config-dir
       (expand-file-name terraform-docs-config-name config-dir))))
 
-(defun terraform-docs (&optional file-path stdout)
+(defun terraform-docs-run (&optional file-path stdout)
   "Run terraform-docs.
 If FILE-PATH is provided, use it as the base path.
    Otherwise, default to the current buffer.
@@ -78,7 +78,7 @@ If STDOUT is non-nil, return the output as a string
 If FILE-PATH is provided, use it as the base path.
     Otherwise, default to the current buffer."
   (interactive)
-  (let ((output (terraform-docs file-path t)))
+  (let ((output (terraform-docs-run file-path t)))
     (with-output-to-temp-buffer "*terraform-docs-output*"
       (princ output))))
 
@@ -95,7 +95,7 @@ If FILE-NAME is provided, use it as the output path.
          (current-dir (file-name-directory file-path))
          (directory-name (file-name-nondirectory (directory-file-name current-dir)))
          (output-file (or file-name (expand-file-name (format "output-for-%s.md" directory-name) current-dir)))
-         (output (terraform-docs file-path t)))
+         (output (terraform-docs-run file-path t)))
     (with-temp-file output-file
       (insert output))
     (message "Output written to %s" output-file)
