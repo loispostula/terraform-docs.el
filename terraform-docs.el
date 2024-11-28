@@ -102,7 +102,7 @@ If FILE-NAME is provided, use it as the output path.
     (message "Output written to %s" output-file)
     output-file))
 
-(defun terraform-docs-to-file-and-open (&optional file-path)
+(defun terraform-docs-to-file-and-open (&optional file-path file-name)
   "Run terraform-docs and write the output to a generated file and open it.
 The file name is based on the directory where terraform-docs is executed.
 If FILE-PATH is provided, use it as the base path.
@@ -111,7 +111,7 @@ If FILE-NAME is provided, use it as the output path.
    Otherwise, generate it based on the directory
    where terraform-docs is executed."
   (interactive)
-  (let ((output-file (terraform-docs-to-file file-path)))
+  (let ((output-file (terraform-docs-to-file file-path file-name)))
     (find-file output-file)))
 
 (provide 'terraform-docs)
