@@ -1,4 +1,4 @@
-;;; terraform-docs.el --- Integrate terraform-docs with Emacs -*- lexical-binding: t; -*-
+;;; terraform-docs.el --- Integrate terraform-docs -*- lexical-binding: t; -*-
 
 ;; Author: Lo1s Postula <lois@postu.la>
 ;; URL: https://github.com/loispostula/terraform-docs.el
@@ -38,8 +38,8 @@
   :group 'terraform-docs)
 
 (defun terraform-docs-config-file (start-dir)
-  "Find the full path to the Terraform Docs configuration file
-starting from START-DIR and searching upwards."
+  "Find the full path to the Terraform Docs configuration file.
+It will starts from START-DIR and searching upwards."
   (let ((config-dir (locate-dominating-file
                      start-dir
                      (lambda (dir)
