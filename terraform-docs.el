@@ -60,9 +60,10 @@ If STDOUT is non-nil, return the output as a string
          (module-dir (or current-dir ""))
          (command (concat "terraform-docs"
                           (when config-file
-                            (concat " -c " config-file))
+                            (concat " -c " (shell-quote-argument config-file)))
                           (when stdout
-                            " --output-file=\"\"")
+                            " --output-file"
+                            (shell-quote-argument ""))
                           " "
                           (expand-file-name module-dir))))
     (if command
