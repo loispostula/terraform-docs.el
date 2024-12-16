@@ -1,4 +1,4 @@
-;;; terraform-docs.el --- Integrate terraform-docs -*- lexical-binding: t; -*-
+;;; terraform-docs.el --- Generate Terraform modules documentation with terraform-docs -*- lexical-binding: t; -*-
 
 ;; Author: Lois Postula <lois@postu.la>
 ;; URL: https://github.com/loispostula/terraform-docs.el
